@@ -24,6 +24,16 @@ class Spider:
         self.boot()
         self.crawl_page('First Spider' , Spider.base_url)
 
+    @staticmethod
+    def boot():
+        create_project_directory(Spider.project_name)
+        create_data(Spider.project_name , Spider.base_url)
+        Spider.queue = file_to_sets(Spider.queue_file)
+        Spider.crawled = file_to_sets(Spider.crawled_file)
+
+
+
+
 
 
 
